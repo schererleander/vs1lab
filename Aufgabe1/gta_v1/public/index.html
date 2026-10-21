@@ -27,7 +27,23 @@
             <!-- ############### VS1Lab 1a Form 1 Start -->
             <form id="tag-form" action="/tagging" method="post">
 
-                <!-- ... your code here ... -->
+                <fieldset>
+                    <legend>Add a new GeoTag</legend>
+                    <label for="tagging-latitude">Latitude:
+                        <input id="tagging-latitude" name="latitude" type="number" step="any" value="49.01455" readonly>
+                    </label>
+                    <label for="tagging-longitude">Longitude:
+                        <input id="tagging-longitude" name="longitude" type="number" step="any" value="8.39400" readonly>
+                    </label>
+                    <label for="tagging-name">Name:
+                        <input id="tagging-name" name="name" type="text" placeholder="e.g. Central Berlin" pattern="[A-Za-zÄÖÜäöüß]{1,10}" maxlength="10" required>
+                    </label>
+                    <label for="tagging-hashtag">Hashtag:
+                        <input id="tagging-hashtag" name="hashtag" type="text" pattern="#[a-zA-Z]{1,10}" placeholder="e.g. #ber">
+                    </label>
+                    <input type="submit" value="Add Tag">
+                </fieldset>
+                 
 
             </form>
             <!-- ############### VS1Lab 1a Form 1 End -->
@@ -40,7 +56,17 @@
             <!-- ############### VS1Lab 1a Form 2 Start -->
             <form class="discovery__search" id="discoveryFilterForm" action="/discovery" method="post">
 
-                <!-- ... your code here ... -->
+                <fieldset>
+                    <legend>Search</legend>
+
+                    <input type="hidden" id="discovery-latitude" name="latitude" value="49.01455">
+                    <input type="hidden" id="discovery-longitude" name="longitude" value="8.39400">
+
+                    <label for="discovery-searchterm">Search term or keywords: 
+                        <input id="discovery-searchterm" name="searchterm" type="text" placeholder="e.g. Berlin">
+                    </label>
+                    <input type="submit" value="Search">
+                </fieldset>
 
             </form>
             <!-- ############### VS1Lab 1a Form 2 End -->
