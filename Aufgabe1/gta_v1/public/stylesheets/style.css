@@ -24,10 +24,13 @@ html {
 /* Variables (example: see declaration for "a" below) */
 
 :root {
-  --link-color: #00B7FF;
-  --background-color: #efefef;
-  --border-color: #cdcdcd;
-  --gray-color: #666;
+  --link-color: #405B50;
+  --background-color: #FAF7F2;
+  --border-color: #A7B8AE;
+  --text-color: #303D36;
+  --surface-color: #EDF2E9;
+  --accent-color: #F2CDBD;
+  --header-color: #D4E3D8;
 }
 
 
@@ -35,6 +38,8 @@ html {
 
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -46,8 +51,15 @@ a {
 
 /* ### TODO ### Styles for other HTML elements */
 
-/* ... your code here ... */
+input {
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
 
+input[type="submit"] {
+  color: var(--text-color);
+  background-color: var(--accent-color);
+}
 
 /* Grid styles (no changes required) */
 
@@ -106,32 +118,134 @@ a {
   width: calc(100% - 1rem);
 }
 
-
 /* ### TODO ### Styles for Header Component */
 
-/* ... your code here ... */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: var(--text-color);
+  background: var(--header-color);
+  border-bottom: 1px solid var(--border-color);
+}
 
+.header a {
+  color: var(--link-color);
+}
+
+.header img {
+  width: 2rem;
+  height: 2rem;
+}
 
 /* ### TODO ### Styles for Main Component */
 
-/* ... your code here ... */
-
+.main {
+  display: flex;
+  margin: 1rem auto;
+  gap: 1rem;
+}
 
 /* ### TODO ### Styles for Tagging component */
 
-/* ... your code here ... */
+#tag-fieldset {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+  background-color: var(--surface-color);
+  padding: 1rem;
+}
 
+#tag-fieldset label {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+
+#tag-fieldset input {
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+}
 
 /* ### TODO ### Styles for Discovery component */
 
-/* ... your code here ... */
+#discovery-fieldset {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+  background-color: var(--surface-color);
+  padding: 1rem;
+}
+
+#discovery-fieldset label {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+
+#discovery-fieldset input {
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+}
+
+.discovery {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.discovery__wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.discovery__results {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.discovery__results li {
+  border: 1px solid var(--border-color);
+  background-color: var(--surface-color);
+  padding: 0.5rem;
+}
+
+#map {
+  display: flex;
+  flex-direction: column;
+}
+
+#map img {
+  width: 100%;
+  max-width: 438px;
+  height: auto;
+}
 
 
 /* ### TODO ### Styles for Footer Component */
 
-/* ... your code here ... */
+.footer {
+  display: flex;
+  border: 1px solid var(--border-color);
+  background-color: var(--surface-color);
+  padding: 1rem;
+}
 
 
 /* ### TODO ### Media Queries */
 
-/* ... your code here ... */
+@media (max-width: 700px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .discovery__wrapper {
+    flex-direction: column;
+  }
+
+}
