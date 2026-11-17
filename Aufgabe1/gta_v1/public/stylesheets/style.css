@@ -233,7 +233,7 @@ input[type="submit"] {
   display: flex;
   border: 1px solid var(--border-color);
   background-color: var(--surface-color);
-  padding: 1rem;
+  margin-top: auto;
 }
 
 
