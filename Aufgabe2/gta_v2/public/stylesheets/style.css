@@ -1,0 +1,255 @@
+/*
+  File origin: VS1LAB A1b
+
+  CSS style is BEM. Classes used for CSS, IDs for JavaScript querying (future use).
+  CSS variables used for clarity and themability (e.g. through SSR).
+  Inherited box sizing used for ease of including 3rd party content-box components.
+*/
+
+/* Global styling */
+
+html {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+
+  /* This approach prevents issues with 3rd party content-box components */
+  box-sizing: inherit;
+}
+
+
+/* Variables (example: see declaration for "a" below) */
+
+:root {
+  --link-color: #405B50;
+  --background-color: #FAF7F2;
+  --border-color: #A7B8AE;
+  --text-color: #303D36;
+  --surface-color: #EDF2E9;
+  --accent-color: #F2CDBD;
+  --header-color: #D4E3D8;
+}
+
+
+/* HTML element styles */
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--link-color);
+}
+
+/* ### TODO ### Styles for other HTML elements */
+
+input {
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+input[type="submit"] {
+  color: var(--text-color);
+  background-color: var(--accent-color);
+}
+
+/* Grid styles (no changes required) */
+
+.row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.col-1 {
+  width: calc(8.33% - 1rem);
+}
+
+.col-2 {
+  width: calc(16.66% - 1rem);
+}
+
+.col-3 {
+  width: calc(25% - 1rem);
+}
+
+.col-4 {
+  width: calc(33.33% - 1rem);
+}
+
+.col-5 {
+  width: calc(41.66% - 1rem);
+}
+
+.col-6 {
+  width: calc(50% - 1rem);
+}
+
+.col-7 {
+  width: calc(58.33% - 1rem);
+}
+
+.col-8 {
+  width: calc(66.66% - 1rem);
+}
+
+.col-9 {
+  width: calc(75% - 1rem);
+}
+
+.col-10 {
+  width: calc(83.33% - 1rem);
+}
+
+.col-11 {
+  width: calc(91.66% - 1rem);
+}
+
+.col-12 {
+  width: calc(100% - 1rem);
+}
+
+/* ### TODO ### Styles for Header Component */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: var(--text-color);
+  background: var(--header-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header a {
+  color: var(--link-color);
+}
+
+.header img {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* ### TODO ### Styles for Main Component */
+
+.main {
+  display: flex;
+  margin: 1rem auto;
+  gap: 1rem;
+}
+
+/* ### TODO ### Styles for Tagging component */
+
+#tag-fieldset {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+  background-color: var(--surface-color);
+  padding: 1rem;
+}
+
+#tag-fieldset label {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+
+#tag-fieldset input {
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+}
+
+/* ### TODO ### Styles for Discovery component */
+
+#discovery-fieldset {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+  background-color: var(--surface-color);
+  padding: 1rem;
+}
+
+#discovery-fieldset label {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+
+#discovery-fieldset input {
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+}
+
+.discovery {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.discovery__wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.discovery__results {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.discovery__results li {
+  border: 1px solid var(--border-color);
+  background-color: var(--surface-color);
+  padding: 0.5rem;
+}
+
+#map {
+  display: flex;
+  flex-direction: column;
+  width: 438px;
+  max-width: 100%;
+  min-width: 0;
+  height: 500px;
+}
+
+#mapView {
+  width: 100%;
+  height: auto;
+}
+
+
+/* ### TODO ### Styles for Footer Component */
+
+.footer {
+  display: flex;
+  margin-top: auto;
+  border: 1px solid var(--border-color);
+  background-color: var(--surface-color);
+  padding: 1rem;
+}
+
+
+/* ### TODO ### Media Queries */
+
+@media (max-width: 700px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .discovery__wrapper {
+    flex-direction: column;
+  }
+
+}
