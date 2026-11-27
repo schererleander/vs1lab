@@ -143,6 +143,7 @@ input[type="submit"] {
 .main {
   display: flex;
   margin: 1rem auto;
+  padding: 0 1rem;
   gap: 1rem;
 }
 
@@ -163,6 +164,7 @@ input[type="submit"] {
 }
 
 #tag-fieldset input {
+  width: 100%;
   border: 1px solid var(--border-color);
   border-radius: 0.25rem;
   padding: 0.5rem;
@@ -185,11 +187,13 @@ input[type="submit"] {
 }
 
 #discovery-fieldset input {
+  width: 100%;
   border: 1px solid var(--border-color);
   border-radius: 0.25rem;
   padding: 0.5rem;
 }
 
+.tagging,
 .discovery {
   display: flex;
   flex-direction: column;
@@ -240,12 +244,12 @@ input[type="submit"] {
 /* ### TODO ### Media Queries */
 
 @media (max-width: 700px) {
-  .main {
+  .row {
     flex-direction: column;
   }
 
-  .discovery__wrapper {
-    flex-direction: column;
+  [class*="col-"] {
+    width: 100%;
   }
 
 }
